@@ -9,7 +9,7 @@
 
 body {
     font-family: 'Science Gothic', sans-serif;
-    background-color: #d40d0d;
+    background-color: var(--background-color);
     color: var(--text-color);
     margin: 0;
     padding: 0;
@@ -18,8 +18,8 @@ body {
 .navbar {
     background-color: var(--background-color);
     width: 100%;
-    height: 70px;
-    padding: 16px 24px;
+    height: 68px;
+    padding: 10px 32px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -28,20 +28,46 @@ body {
 .navbar ul {
     display: flex;
     list-style: none;
+    align-items: center;
+    gap: 10px;
+    margin: 0 32px 0 0;
+    padding: 0;
 }
 
 .navbar ul li {
-    margin-left: 16px;
-    padding-right:;
+    margin: 0;
 }
 
 .navbar ul li a {
     color: var(--text-color);
     text-decoration: none;
-    font-size: 18px;
+    font-size: 15px;
+    position: relative;
+    display: inline-block;
+    transition: 0.3s ease;
+}
+
+.navbar ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    left: 0;
+    bottom: -4px;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
 }
 
 .navbar-logo img {
   height: auto;
   width: auto;
+}
+
+.navbar ul li:hover a {
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+.navbar ul li:hover a::after {
+    width: 100%;
 }
